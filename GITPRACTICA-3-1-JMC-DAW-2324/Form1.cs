@@ -26,8 +26,12 @@ namespace GITPRACTICA_3_1_JMC_DAW_2324
             //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
             // telegrama urgente?
-            if (cbUrgente.Checked)
+            if (rbUrgente.Checked)
+                //Añadimos rbUrgente GITPRACTICA-3-1-JMC-DAW-2324
                 tipoTelegrama = 'u';
+            else
+                tipoTelegrama = 'o';
+            //Añadimos tipoTelegrama = 'o' GITPRACTICA-3-1-JMC-DAW-2324
             //Obtengo el número de palabras que forma el telegrama
             numPalabras = textoTelegrama.Length;
             //Si el telegrama es ordinario
