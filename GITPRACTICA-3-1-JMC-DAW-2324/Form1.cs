@@ -20,22 +20,27 @@ namespace GITPRACTICA_3_1_JMC_DAW_2324
         private void button1_Click(object sender, EventArgs e)
         {
             string textoTelegrama;
-            char tipoTelegrama = ' ';
+            char tipoTelegrama = 'o'; //Práctica 2.3 JMC - DAWY 23-24 Añadimos una 'o' para que ordinario sea puesto como defecto
             int numPalabras = 0;
             double coste;
             //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
             // telegrama urgente?
             if (cbUrgente.Checked)
+                //Práctica 2.3 JMC - DAWY 23-24 Punto de interrupción para comprobar si es ordinario o urgente
                 tipoTelegrama = 'u';
             //Obtengo el número de palabras que forma el telegrama
-            numPalabras = textoTelegrama.Length;
+            numPalabras = textoTelegrama.Split(' ', '.', ',', ':', ';').Length;
+            //Práctica 2.3 JMC - DAWY 23-24 Este es el código corregido para calcular bien el número de palabras
             //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
+                //Práctica 2.3 JMC - DAWY 23-24 Punto de interrupción para comprobar el número de palabras
                 if (numPalabras <= 10)
-                    coste = 25;
+                    //Práctica 2.3 JMC - DAWY 23-24 Punto de interrupción para saber si entra en telegrama ordinario
+                    coste = 2.5;
                 else
-                    coste = 0.5 * numPalabras;
+                    coste = 2.5 + 0.5 * (numPalabras - 10);
+            //Práctica 2.3 JMC - DAWY 23-24 Coste de las palabras corregido
             else
             //Si el telegrama es urgente
             if (tipoTelegrama == 'u')
